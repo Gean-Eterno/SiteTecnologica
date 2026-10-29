@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Fale com a TecnoLógica: parcerias, envio de notícias e sugestões.">
     <title>TecnoLógica - Contato</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"defer></script>
 </head>
-
 <body>
     <header id="header">
         <div id="logo">
@@ -30,26 +29,23 @@
                 </li>
             </ul>
         </nav>
+        <button type="button" id="botao-tema" aria-label="Alternar entre tema claro e escuro" title="Alternar tema">🌙</button>
     </header>
-
     <main id="content">
         <section class="post">
             <h2>Fale com a gente</h2>
             <p>
                 Quer propor uma parceria, enviar uma notícia ou deixar uma sugestão? Preencha o formulário abaixo.
             </p>
-
             <form id="form-contato" method="post">
                 <div class="campo">
                     <label for="nome">Nome</label>
                     <input type="text" id="nome" name="nome">
                 </div>
-
                 <div class="campo">
                     <label for="email">E-mail</label>
                     <input type="email" id="email" name="email">
                 </div>
-
                 <div class="campo">
                     <label for="assunto">Assunto</label>
                     <select id="assunto" name="assunto">
@@ -60,20 +56,16 @@
                         <option value="outro">Outro</option>
                     </select>
                 </div>
-
                 <div class="campo">
                     <label for="mensagem">Mensagem</label>
                     <textarea id="mensagem" name="mensagem" rows="6"></textarea>
                 </div>
-
                 <button type="submit">Enviar mensagem</button>
             </form>
         </section>
     </main>
-
     <footer>
         <p>&copy; 2026 TecnoLógica - Todos os direitos reservados.</p>
     </footer>
 </body>
-
 </html>
