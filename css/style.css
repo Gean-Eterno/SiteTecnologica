@@ -106,27 +106,82 @@ h3 {
     font-weight: bold;
 }
 
-##botao-tema {
+#botao-tema {
+    --larg: 72px;
+    --alt: 36px;
+    --bolinha: calc(var(--alt) - 8px);
+    --icone: calc(var(--alt) - 16px);
+
     position: absolute;
     top: 16px;
     left: 16px;
-    width: 48px;
-    height: 48px;
+    width: var(--larg);
+    height: var(--alt);
     padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
     border: 2px solid #ffffff;
-    background: rgba(255, 255, 255, 0.15);
-    color: #ffffff;
+    border-radius: 999px;
+    background: #ffffff;
     cursor: pointer;
-    transition: transform 0.2s ease, background 0.2s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
-#botao-tema svg {
-    width: 24px;
-    height: 24px;
+body.tema-escuro #botao-tema {
+    background: #0b1220;
+}
+
+#botao-tema:hover {
+    transform: scale(1.05);
+}
+
+#botao-tema:focus-visible {
+    outline: 3px solid var(--cor-logo-destaque);
+    outline-offset: 2px;
+}
+
+#botao-tema .botao-bolinha {
+    position: absolute;
+    top: 2px;
+    left: calc(var(--larg) - var(--bolinha) - 6px);
+    width: var(--bolinha);
+    height: var(--bolinha);
+    border-radius: 50%;
+    background: var(--cor-header);
+    transition: left 0.3s ease, background 0.3s ease;
+}
+
+body.tema-escuro #botao-tema .botao-bolinha {
+    left: 2px;
+    background: #ffffff;
+}
+
+/* Ícones: o sol aparece no tema claro, a lua no escuro */
+#botao-tema .icone {
+    position: absolute;
+    top: 50%;
+    width: var(--icone);
+    height: var(--icone);
+    margin-top: calc(var(--icone) / -2);
+    transition: opacity 0.3s ease;
+}
+
+#botao-tema .icone-sol {
+    left: 8px;
+    color: var(--cor-header);
+    opacity: 1;
+}
+
+#botao-tema .icone-lua {
+    right: 8px;
+    color: #ffffff;
+    opacity: 0;
+}
+
+body.tema-escuro #botao-tema .icone-sol {
+    opacity: 0;
+}
+
+body.tema-escuro #botao-tema .icone-lua {
+    opacity: 1;
 }
 
 #content {
@@ -244,15 +299,10 @@ footer {
         font-size: 32px;
     }
 
-    #botao-tema {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
+       #botao-tema {
+        --larg: 60px;
+        --alt: 30px;
         top: 12px;
         left: 12px;
-    }
-        #botao-tema svg {
-        width: 20px;
-        height: 20px;
     }
 }
